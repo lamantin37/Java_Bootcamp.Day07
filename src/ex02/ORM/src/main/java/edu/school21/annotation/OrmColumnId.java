@@ -1,0 +1,12 @@
+package edu.school21.annotation;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface OrmColumnId {
+    Constraints constraints() default @Constraints(primaryKey = false, allowNull = false, unique = false);
+}
